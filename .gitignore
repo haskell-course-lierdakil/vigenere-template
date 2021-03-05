@@ -1,0 +1,3 @@
+# Stack uses this directory as scratch space.
+/.stack-work/
+/dist-newstyle/

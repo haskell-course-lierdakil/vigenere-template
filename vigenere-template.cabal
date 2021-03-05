@@ -1,0 +1,54 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 7ed09d0274f620dcccef574bd3d1e7b3f940dd7545c290c9eb8310b55415d4fc
+
+name:           vigenere-template
+version:        0.0.0
+homepage:       https://github.com/githubuser/vigenere-template#readme
+bug-reports:    https://github.com/githubuser/vigenere-template/issues
+author:         Author name here
+maintainer:     Author name here
+license:        MIT
+build-type:     Simple
+extra-source-files:
+    LICENSE.md
+    package.yaml
+    README.md
+    stack.yaml
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/vigenere-template
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_vigenere_template
+  hs-source-dirs:
+      library
+  ghc-options: -Wall
+  build-depends:
+      base
+  default-language: Haskell2010
+
+test-suite vigenere-template-test-suite
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules:
+      Paths_vigenere_template
+  hs-source-dirs:
+      test-suite
+  ghc-options: -Wall -rtsopts -threaded -with-rtsopts=-N
+  build-depends:
+      base
+    , containers
+    , tasty
+    , tasty-hspec
+    , tasty-quickcheck
+    , vigenere-template
+  default-language: Haskell2010

@@ -1,0 +1,18 @@
+name: Haskell CI
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container: lierdakil/alpine-haskell:8.10.4-pwsh
+    steps:
+    - uses: actions/checkout@v2
+    - name: Make stack root dir
+      run: echo $HOME && mkdir $HOME/.stack
+    - uses: pat-s/always-upload-cache@v2.1.3
+      with:
+        path: /github/home/.stack
+        key: ${{ runner.os }}-stack
+    - name: Run tests
+      run: stack --allow-different-user --system-ghc test
